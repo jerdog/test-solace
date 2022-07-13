@@ -12,6 +12,9 @@ jobs:
         user: "12121"
     steps:
       - run:
+          name: "Perms"
+          command: "chown -R $USER:$USER /"
+      - run:
           name: "Say hello"
           command: "echo Hello, World!"
 
