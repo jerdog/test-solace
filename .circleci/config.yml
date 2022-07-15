@@ -11,7 +11,8 @@ jobs:
     docker:
       - image: solace/solace-pubsub-standard
         # does there need to be a working directory for the image?
-        # working_directory: ~/workspace  
+        # working_directory: ~/workspace
+        working_directory: "~/"
         environment: 
           username_admin_globalaccesslevel: "admin"
           username_admin_password: "admin"
