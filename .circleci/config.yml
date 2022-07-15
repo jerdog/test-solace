@@ -10,6 +10,7 @@ jobs:
           username_admin_globalaccesslevel: admin
           username_admin_password: admin
         user: "12121"
+    steps:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
