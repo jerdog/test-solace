@@ -2,30 +2,29 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-# I don't think we need an orb?
-orbs: 
-  docker: circleci/docker@2.1.2
-
 jobs:
   component-tests:
     docker:
       - image: solace/solace-pubsub-standard:10.1.0.19
-        # does there need to be a working directory for the image?
-        # working_directory: ~/workspace
         environment: 
           username_admin_globalaccesslevel: $ENV_GLOBALACCESSLEVEL
-          username_admin_password: $ENV_USER_PASSWD
+          username_admin_password: $ENV_GLOBALACCESSLEVEL
         user: "12121"   #needed or else image won't startup
     working_directory: /tmp
     steps:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-#      - run:
-#          name: run component tests
-#          command: |
-#            exec bash
-#            make component-tests
+      - run:
+          name: "Sleep - to wait for container to really start"
+          command: "sleep 60"
+      - run:
+          name: "SEMP no password"
+          command: "curl -XGET http://localhost:8080/SEMP/v2/config/spec"
+      - run:
+          name: "SEMP using mgmt user set via env"
+          command: "curl -XGET http://localhost:8080/SEMP/v2/config/msgVpns -u $ENV_GLOBALACCESSLEVEL:$ENV_GLOBALACCESSLEVEL"
+        
 
 workflows:
   test-solace:
