@@ -2,10 +2,16 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+# I don't think we need an orb?
+orbs: 
+  docker: circleci/docker@2.1.2
+
 jobs:
   component-tests:
     docker:
       - image: solace/solace-pubsub-standard
+        # does there need to be a working directory for the image?
+        # working_directory: ~/workspace  
         environment: 
           username_admin_globalaccesslevel: "admin"
           username_admin_password: "admin"
