@@ -19,10 +19,13 @@ jobs:
     working_directory: /tmp
     steps:
       - run:
-          name: run component tests
-          command: |
-            exec bash
-            make component-tests
+          name: "Say hello"
+          command: "echo Hello, World!"
+#      - run:
+#          name: run component tests
+#          command: |
+#            exec bash
+#            make component-tests
 
 workflows:
   test-solace:
