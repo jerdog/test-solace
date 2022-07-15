@@ -7,8 +7,8 @@ jobs:
     docker:
       - image: solace/solace-pubsub-standard
         environment: 
-          username_admin_globalaccesslevel: admin
-          username_admin_password: admin
+          username_admin_globalaccesslevel: "admin"
+          username_admin_password: "admin"
     steps:
       - run:
           name: "Say hello"
