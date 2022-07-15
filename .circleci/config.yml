@@ -16,6 +16,7 @@ jobs:
           username_admin_globalaccesslevel: $ENV_GLOBALACCESSLEVEL
           username_admin_password: $ENV_USER_PASSWD
         user: "12121"   #needed or else image won't startup
+    working_directory: /tmp
     steps:
       - run:
           name: run component tests
