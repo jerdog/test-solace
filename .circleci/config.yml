@@ -18,8 +18,10 @@ jobs:
         user: "12121"   #needed or else image won't startup
     steps:
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: run component tests
+          command: |
+            exec bash
+            make component-tests
 
 workflows:
   test-solace:
