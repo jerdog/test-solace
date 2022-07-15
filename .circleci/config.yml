@@ -9,7 +9,7 @@ orbs:
 jobs:
   component-tests:
     docker:
-      - image: solace/solace-pubsub-standard
+      - image: solace/solace-pubsub-standard:10.1.0.19
         # does there need to be a working directory for the image?
         # working_directory: ~/workspace
         working_directory: "~/"
