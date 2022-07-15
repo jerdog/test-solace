@@ -19,6 +19,9 @@ jobs:
           name: "Sleep - to wait for container to really start"
           command: "sleep 60"
       - run:
+          name: "Show ports"
+          command: "netstat -tulpn"
+      - run:
           name: "SEMP no password"
           command: "curl -XGET http://localhost:8080/SEMP/v2/config/spec"
       - run:
