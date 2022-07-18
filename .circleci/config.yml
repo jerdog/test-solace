@@ -5,6 +5,7 @@ version: 2.1
 jobs:
   component-tests:
     docker:
+      - image: cimg/base:current
       - image: solace/solace-pubsub-standard:10.1.0.19
         environment: 
           username_admin_globalaccesslevel: $ENV_GLOBALACCESSLEVEL
