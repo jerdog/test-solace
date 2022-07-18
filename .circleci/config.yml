@@ -14,9 +14,6 @@ jobs:
     working_directory: /tmp
     steps:
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-      - run:
           name: "Sleep - to wait for container to really start"
           command: "sleep 60"
       - run:
