@@ -10,6 +10,7 @@ jobs:
           username_admin_globalaccesslevel: $ENV_GLOBALACCESSLEVEL
           username_admin_password: $ENV_GLOBALACCESSLEVEL
         user: "12121"   #needed or else image won't startup
+        command: [-p, 8080:8080, -p, 55555:55555, -p, 2222:2222, --env, username_admin_globalaccesslevel=admin, --env, username_admin_password=admin ]
       #- image: cimg/base:current
     working_directory: /tmp
     steps:
