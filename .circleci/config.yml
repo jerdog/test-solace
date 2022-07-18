@@ -5,7 +5,7 @@ version: 2.1
 jobs:
   component-tests:
     docker:
-      - image: solace/solace-pubsub-standard:10.1.0.19
+      - image: solace/solace-pubsub-standard
         environment: 
           username_admin_globalaccesslevel: $ENV_GLOBALACCESSLEVEL
           username_admin_password: $ENV_GLOBALACCESSLEVEL
