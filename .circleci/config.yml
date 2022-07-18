@@ -5,13 +5,12 @@ version: 2.1
 jobs:
   component-tests:
     docker:
-     - image: cimg/base:current
-     - image: solace/solace-pubsub-standard
+      - image: cimg/base:current
+      - image: solace/solace-pubsub-standard
         environment: 
           username_admin_globalaccesslevel: $ENV_GLOBALACCESSLEVEL
           username_admin_password: $ENV_GLOBALACCESSLEVEL
         user: "12121"   #needed or else image won't startup
-    #working_directory: /tmp
     steps:
       - run:
           name: "Sleep - to wait for container to really start"
