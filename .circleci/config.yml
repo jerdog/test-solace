@@ -10,7 +10,6 @@ jobs:
           username_admin_globalaccesslevel: $ENV_GLOBALACCESSLEVEL
           username_admin_password: $ENV_GLOBALACCESSLEVEL
         user: "12121"   #needed or else image won't startup
-        command: [ /usr/sbin/boot.sh ]
       #- image: cimg/base:current
     working_directory: /tmp
     steps:
