@@ -15,12 +15,12 @@ jobs:
       - run:
           name: "Sleep - to wait for container to really start"
           command: "sleep 60"
-      - run:
-          name: "Show ports"
-          command: "netstat -tulpn"
-      - run:
-          name: "SEMP no password"
-          command: "curl -XGET http://localhost:8080/SEMP/v2/config/spec"
+#      - run:
+#          name: "Show ports"
+ #         command: "netstat -tulpn"
+#      - run:
+#          name: "SEMP no password"
+#          command: "curl -XGET http://localhost:8080/SEMP/v2/config/spec"
       - run:
           name: "SEMP using mgmt user set via env"
           command: "curl -XGET -v http://localhost:8080/SEMP/v2/config/msgVpns -u ${ENV_GLOBALACCESSLEVEL}:${ENV_USER_PASSWD}"
