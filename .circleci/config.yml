@@ -23,7 +23,7 @@ jobs:
           command: "curl -XGET http://localhost:8080/SEMP/v2/config/spec"
       - run:
           name: "SEMP using mgmt user set via env"
-          command: "curl -XGET http://localhost:8080/SEMP/v2/config/msgVpns -u $ENV_GLOBALACCESSLEVEL:$ENV_GLOBALACCESSLEVEL"
+          command: "curl -XGET http://localhost:8080/SEMP/v2/config/msgVpns -u admin:admin"
         
 
 workflows:
