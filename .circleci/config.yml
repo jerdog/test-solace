@@ -30,3 +30,4 @@ workflows:
   test-solace:
     jobs:
       - component-tests
+      
